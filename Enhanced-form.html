@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="HTML5 content and forms demo with lists, tables, media, and validated form.">
+    <title>HTML5 Content + Forms Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>HTML5 Content & Forms Showcase</h1>
+        <p class="tagline">Semantic content, accessible data, and native form validation</p>
+        <nav aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#content">Content</a></li>
+            <li><a href="#table">Data Table</a></li>
+            <li><a href="#media">Media</a></li>
+            <li><a href="#form">Form</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main id="content" class="container">
+      <section aria-labelledby="lists-heading" class="content-section">
+        <h2 id="lists-heading">Organized Content with Lists</h2>
+        <div class="grid-2">
+          <article>
+            <h3>Unordered List</h3>
+            <ul>
+              <li>Use semantic HTML elements for structure</li>
+              <li>Label form inputs for accessibility</li>
+              <li>Provide helpful placeholders and hints</li>
+              <li>Rely on native validation before custom code</li>
+            </ul>
+          </article>
+          <article>
+            <h3>Ordered List</h3>
+            <ol>
+              <li>Plan your layout</li>
+              <li>Build content sections</li>
+              <li>Add media and a data table</li>
+              <li>Create and validate your form</li>
+            </ol>
+          </article>
+        </div>
+        <article>
+          <h3>Description List</h3>
+          <dl>
+            <dt>Semantic</dt>
+            <dd>Elements that describe their content and purpose.</dd>
+            <dt>Usable</dt>
+            <dd>Interfaces that are intuitive and forgiving.</dd>
+            <dt>Accessible</dt>
+            <dd>Content everyone can perceive, operate, and understand.</dd>
+          </dl>
+        </article>
+      </section>
+
+      <section id="table" aria-labelledby="table-heading" class="content-section">
+        <h2 id="table-heading">Accessible Data Table</h2>
+        <figure>
+          <figcaption class="sr-only">Course catalog showing level, duration, and online availability.</figcaption>
+          <table>
+            <caption>Short Course Catalog</caption>
+            <thead>
+              <tr>
+                <th scope="col">Course</th>
+                <th scope="col">Level</th>
+                <th scope="col">Duration</th>
+                <th scope="col">Online</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">HTML & CSS Basics</th>
+                <td>Beginner</td>
+                <td>4 weeks</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Accessible Web Design</th>
+                <td>Intermediate</td>
+                <td>6 weeks</td>
+                <td>Yes</td>
+              </tr>
+              <tr>
+                <th scope="row">Modern JavaScript</th>
+                <td>Intermediate</td>
+                <td>8 weeks</td>
+                <td>No</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="4">Data accurate as of 2025-08.</td>
+              </tr>
+            </tfoot>
+          </table>
+        </figure>
+      </section>
+
+      <section id="media" aria-labelledby="media-heading" class="content-section">
+        <h2 id="media-heading">Media with Semantic Elements</h2>
+        <figure>
+          <img src="https://picsum.photos/id/1025/960/480" alt="Landscape photograph used as a decorative banner" loading="lazy">
+          <figcaption>Sample image embedded using the <code>&lt;figure&gt;</code> element with a caption.</figcaption>
+        </figure>
+        <div class="grid-2">
+          <figure>
+            <figcaption>Sample audio</figcaption>
+            <audio controls preload="none">
+              <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+              Your browser does not support the audio element.
+            </audio>
+          </figure>
+          <figure>
+            <figcaption>Sample video</figcaption>
+            <video controls width="100%" poster="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&q=80&auto=format&fit=crop">
+              <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </figure>
+        </div>
+      </section>
+
+      <section id="form" aria-labelledby="form-heading" class="content-section">
+        <h2 id="form-heading">Complete HTML5 Form</h2>
+        <p>All validation is powered by native HTML5 attributes—no JavaScript required.</p>
+
+        <form action="#" method="post" autocomplete="on" class="form" novalidate="false">
+          <fieldset>
+            <legend>Account Details</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="user-id">User ID <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="user-id" name="user-id" type="text" value="AUTO-ASSIGNED" readonly required>
+                <p id="hint-user-id" class="hint">Read-only demo field.</p>
+              </div>
+
+              <div class="field">
+                <label for="username">Username <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="username" name="username" type="text" inputmode="text" placeholder="yourname" minlength="4" maxlength="20" pattern="^(?=.{4,20}$)[a-zA-Z0-9._-]+$" title="4–20 chars: letters, numbers, dot, underscore, hyphen" autocomplete="username" required>
+                <p id="hint-username" class="hint">4–20 characters. Letters, numbers, dot, underscore, hyphen.</p>
+              </div>
+
+              <div class="field">
+                <label for="email">Email <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+                <p id="hint-email" class="hint">We'll never share your email.</p>
+              </div>
+
+              <div class="field">
+                <label for="password">Password <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="password" name="password" type="password" placeholder="Create a strong password" minlength="8" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,}$" title="At least 8 chars with upper, lower, number, and symbol" autocomplete="new-password" required>
+                <p id="hint-password" class="hint">Min 8 chars, include upper/lowercase, number, and symbol.</p>
+              </div>
+
+              <div class="field">
+                <label for="website">Website</label>
+                <input id="website" name="website" type="url" placeholder="https://example.com" inputmode="url" autocomplete="url">
+                <p class="hint">Optional personal or company site.</p>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="first-name">First name <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="first-name" name="given-name" type="text" placeholder="Ada" autocomplete="given-name" required>
+              </div>
+              <div class="field">
+                <label for="last-name">Last name <span class="required-badge" aria-hidden="true">*</span></label>
+                <input id="last-name" name="family-name" type="text" placeholder="Lovelace" autocomplete="family-name" required>
+              </div>
+              <div class="field">
+                <label for="phone">Phone</label>
+                <input id="phone" name="tel" type="tel" placeholder="+1 555-555-5555" inputmode="tel" autocomplete="tel" pattern="^\+?[0-9\s\-().]{7,}$" title="Digits, spaces, dashes, parentheses; optional leading +">
+              </div>
+              <div class="field">
+                <label for="dob">Date of birth</label>
+                <input id="dob" name="bday" type="date" max="2025-12-31" autocomplete="bday">
+              </div>
+              <div class="field">
+                <label for="street">Street address</label>
+                <input id="street" name="street-address" type="text" placeholder="123 Main St" autocomplete="street-address">
+              </div>
+              <div class="field">
+                <label for="city">City</label>
+                <input id="city" name="address-level2" type="text" placeholder="Springfield" autocomplete="address-level2">
+              </div>
+              <div class="field">
+                <label for="state">State/Province</label>
+                <input id="state" name="address-level1" type="text" placeholder="CA" minlength="2" maxlength="30" autocomplete="address-level1">
+              </div>
+              <div class="field">
+                <label for="zip">ZIP/Postal code</label>
+                <input id="zip" name="postal-code" type="text" placeholder="12345" inputmode="numeric" pattern="^\d{5}(-\d{4})?$" title="Enter 5 digits or 5-4 format (e.g., 12345 or 12345-6789)" autocomplete="postal-code">
+              </div>
+              <div class="field">
+                <label for="country">Country</label>
+                <select id="country" name="country" autocomplete="country">
+                  <option value="" selected>Select a country</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="GB">United Kingdom</option>
+                  <option value="AU">Australia</option>
+                  <option value="IN">India</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferences</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="favorite-color">Favorite color</label>
+                <input id="favorite-color" name="favorite-color" type="color" value="#2d6cdf">
+              </div>
+              <div class="field">
+                <label for="experience">Experience (years)</label>
+                <input id="experience" name="experience" type="number" min="0" max="50" step="1" placeholder="3" inputmode="numeric">
+              </div>
+              <div class="field">
+                <label for="satisfaction">Satisfaction</label>
+                <input id="satisfaction" name="satisfaction" type="range" min="0" max="10" step="1" value="7">
+              </div>
+
+              <div class="field">
+                <span class="label">Newsletter</span>
+                <label class="choice"><input type="checkbox" name="newsletter" value="weekly"> Weekly</label>
+                <label class="choice"><input type="checkbox" name="newsletter" value="monthly"> Monthly</label>
+              </div>
+
+              <div class="field">
+                <span class="label">Contact preference</span>
+                <label class="choice"><input type="radio" name="contact" value="email" checked> Email</label>
+                <label class="choice"><input type="radio" name="contact" value="phone"> Phone</label>
+              </div>
+
+              <div class="field">
+                <label for="role">Role</label>
+                <select id="role" name="role">
+                  <optgroup label="Design">
+                    <option>UX Designer</option>
+                    <option>UI Designer</option>
+                  </optgroup>
+                  <optgroup label="Engineering">
+                    <option>Frontend Engineer</option>
+                    <option>Backend Engineer</option>
+                    <option>Full‑Stack Engineer</option>
+                  </optgroup>
+                </select>
+              </div>
+
+              <div class="field">
+                <label for="title">Title (with suggestions)</label>
+                <input id="title" name="title" list="title-suggestions" placeholder="e.g., Student">
+                <datalist id="title-suggestions">
+                  <option value="Student"></option>
+                  <option value="Engineer"></option>
+                  <option value="Designer"></option>
+                  <option value="Manager"></option>
+                </datalist>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Uploads</legend>
+            <div class="form-grid">
+              <div class="field">
+                <label for="avatar">Profile image</label>
+                <input id="avatar" name="avatar" type="file" accept="image/*">
+              </div>
+              <div class="field">
+                <label for="resume">Resume (PDF)</label>
+                <input id="resume" name="resume" type="file" accept="application/pdf">
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Agreements</legend>
+            <div class="field">
+              <label class="choice">
+                <input id="terms" name="terms" type="checkbox" required>
+                I agree to the terms and privacy policy
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-actions">
+            <button type="submit">Submit</button>
+            <button type="reset" class="secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>&copy; 2025 HTML5 Demo. Built with semantic elements and native validation.</p>
+      </div>
+    </footer>
+  </body>
+  
+</html>
